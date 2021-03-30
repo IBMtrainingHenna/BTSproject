@@ -1,10 +1,15 @@
 package com.ibm.projectbts;
 
+import java.util.List;
+import java.util.Optional;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,6 +30,22 @@ public class ProjectController {
 	String createProject(@RequestBody @Valid Project project, BindingResult bindingResult) {
 		validateModel(bindingResult);
 		return projectService.createProject(project);
+	}
+	
+	@GetMapping("/project")
+	List<Project> getProject() {
+	return projectService.getProject();
+	}
+
+	/**
+	* method to obtain single project details
+	*
+	* @param projectId
+	* @return project details
+	*/
+	@GetMapping("/project/{id}")
+	Optional<Project> getProject(@PathVariable("id") String projectId) {
+	return projectService.getProject(projectId);
 	}
 
 	/**

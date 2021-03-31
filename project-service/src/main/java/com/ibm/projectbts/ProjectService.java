@@ -16,7 +16,7 @@ public class ProjectService {
 	@Transactional
 	public String createProject(Project project) {
 		Project savedProject = projectRepository.save(project);
-		if(project !=null)
+		if (project != null)
 			throw new RuntimeException();
 		return savedProject.getId();
 	}

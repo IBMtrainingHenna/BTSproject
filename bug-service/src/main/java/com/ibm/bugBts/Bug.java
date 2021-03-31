@@ -16,6 +16,10 @@ public class Bug {
 	@NotNull
 	@NotBlank
 	private String projectId;
+	private String module;
+	private String buildversion;
+	private String synopsis;
+	private String product;
 	private PRIORITY priority;
 	private STATUS status;
 	private SEVERITY severity;
@@ -87,6 +91,38 @@ public class Bug {
 
 	public void setType(TYPE type) {
 		this.type = type;
+	}
+
+	public String getModule() {
+		return module;
+	}
+
+	public void setModule(String module) {
+		this.module = module;
+	}
+
+	public String getBuildversion() {
+		return buildversion;
+	}
+
+	public void setBuildversion(String buildversion) {
+		this.buildversion = buildversion;
+	}
+
+	public String getSynopsis() {
+		return synopsis;
+	}
+
+	public void setSynopsis(String synopsis) {
+		this.synopsis = synopsis;
+	}
+
+	public String getProduct() {
+		return product;
+	}
+
+	public void setProduct(String product) {
+		this.product = product;
 	}
 
 }

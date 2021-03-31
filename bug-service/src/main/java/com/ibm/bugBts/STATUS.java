@@ -1,0 +1,6 @@
+package com.ibm.bugBts;
+
+public enum STATUS {
+	NEW, ASSIGNED, OPEN, FIXED, PENDING_RETEST, RETEST, REOPEN, VERIFIED, CLOSED
+
+}

@@ -12,17 +12,17 @@ public class Bug {
 	@NotNull
 	@NotBlank
 	private String name;
-	@NotNull
-	@NotBlank
+	//@NotNull
+	//@NotBlank
 	private String projectId;
 	@NotNull
 	@NotBlank
 	private String priority;
-	@NotNull
-	@NotBlank
+	//@NotNull
+	//@NotBlank
 	private String status;
-	@NotNull
-	@NotBlank
+	//@NotNull
+	//@NotBlank
 	private String description;
 
 	public String getId() {

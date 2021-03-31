@@ -26,7 +26,7 @@ public class Bug {
 	private TYPE type;
 	@NotNull
 	@NotBlank
-	@Size(min = 3, max = 15)
+	@Size(min = 5, max = 25)
 	private String description;
 
 	public String getId() {

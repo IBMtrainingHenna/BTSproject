@@ -1,5 +1,7 @@
 package com.ibm.bugBts;
 
+import java.util.Date;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -17,9 +19,12 @@ public class Bug {
 	@NotBlank
 	private String projectId;
 	private String module;
-	private String buildversion;
+	@NotNull
+	@NotBlank
+	private String buildVersion;
 	private String synopsis;
 	private String product;
+	private Date submittedOn;
 	private PRIORITY priority;
 	private STATUS status;
 	private SEVERITY severity;
@@ -101,14 +106,6 @@ public class Bug {
 		this.module = module;
 	}
 
-	public String getBuildversion() {
-		return buildversion;
-	}
-
-	public void setBuildversion(String buildversion) {
-		this.buildversion = buildversion;
-	}
-
 	public String getSynopsis() {
 		return synopsis;
 	}
@@ -124,5 +121,21 @@ public class Bug {
 	public void setProduct(String product) {
 		this.product = product;
 	}
+
+	public Date getSubmittedOn() {
+		return submittedOn;
+	}
+
+	public void setSubmittedOn(Date submittedOn) {
+		this.submittedOn = submittedOn;
+	}
+	public String getBuildVersion() {
+		return buildVersion;
+	}
+
+	public void setBuildVersion(String buildVersion) {
+		this.buildVersion = buildVersion;
+	}
+
 
 }

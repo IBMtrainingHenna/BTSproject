@@ -21,19 +21,19 @@ class BugServiceTest {
 		
 	}
 
-	@Test
-	void testGetBugs() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetBug() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testUpdateBug() {
-		fail("Not yet implemented");
-	}
+//	@Test
+//	void testGetBugs() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	void testGetBug() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	void testUpdateBug() {
+//		fail("Not yet implemented");
+//	}
 
 }

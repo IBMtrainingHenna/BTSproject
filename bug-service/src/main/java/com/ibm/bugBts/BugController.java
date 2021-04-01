@@ -37,7 +37,7 @@ public class BugController {
 		return bugService.getBugs();
 	}
 
-	@GetMapping("/project/{id}")
+	@GetMapping("/bug/{id}")
 	Optional<Bug> getBug(@PathVariable("id") String bugId) {
 		return bugService.getBug(bugId);
 	}

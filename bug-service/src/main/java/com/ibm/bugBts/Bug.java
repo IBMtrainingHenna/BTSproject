@@ -1,7 +1,10 @@
 package com.ibm.bugBts;
 
+import java.util.Date;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.springframework.data.annotation.Id;
 
@@ -12,17 +15,23 @@ public class Bug {
 	@NotNull
 	@NotBlank
 	private String name;
-	//@NotNull
-	//@NotBlank
-	private String projectId;
 	@NotNull
 	@NotBlank
-	private String priority;
-	//@NotNull
-	//@NotBlank
-	private String status;
-	//@NotNull
-	//@NotBlank
+	private String projectId;
+	private String module;
+	@NotNull
+	@NotBlank
+	private String buildVersion;
+	private String synopsis;
+	private String product;
+	private Date submittedOn;
+	private PRIORITY priority;
+	private STATUS status;
+	private SEVERITY severity;
+	private TYPE type;
+	@NotNull
+	@NotBlank
+	@Size(min = 5, max = 25)
 	private String description;
 
 	public String getId() {
@@ -49,28 +58,84 @@ public class Bug {
 		this.projectId = projectId;
 	}
 
-	public String getPriority() {
+	public PRIORITY getPriority() {
 		return priority;
 	}
 
-	public void setPriority(String priority) {
+	public void setPriority(PRIORITY priority) {
 		this.priority = priority;
 	}
 
-	public String getStatus() {
+	public STATUS getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(STATUS status) {
 		this.status = status;
 	}
 
 	public String getDescription() {
-		return description;
+		return description.trim();
 	}
 
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	public SEVERITY getSeverity() {
+		return severity;
+	}
+
+	public void setSeverity(SEVERITY severity) {
+		this.severity = severity;
+	}
+
+	public TYPE getType() {
+		return type;
+	}
+
+	public void setType(TYPE type) {
+		this.type = type;
+	}
+
+	public String getModule() {
+		return module;
+	}
+
+	public void setModule(String module) {
+		this.module = module;
+	}
+
+	public String getSynopsis() {
+		return synopsis;
+	}
+
+	public void setSynopsis(String synopsis) {
+		this.synopsis = synopsis;
+	}
+
+	public String getProduct() {
+		return product;
+	}
+
+	public void setProduct(String product) {
+		this.product = product;
+	}
+
+	public Date getSubmittedOn() {
+		return submittedOn;
+	}
+
+	public void setSubmittedOn(Date submittedOn) {
+		this.submittedOn = submittedOn;
+	}
+	public String getBuildVersion() {
+		return buildVersion;
+	}
+
+	public void setBuildVersion(String buildVersion) {
+		this.buildVersion = buildVersion;
+	}
+
 
 }

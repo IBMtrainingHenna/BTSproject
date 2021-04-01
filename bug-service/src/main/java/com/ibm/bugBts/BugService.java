@@ -18,6 +18,8 @@ public class BugService {
 
 	public String createBug(Bug bug) {
 		Bug savedBug = bugRepository.save(bug);
+		if(bug!=null)
+			throw new RuntimeException();
 		return savedBug.getId();
 	}
 	public List<Bug> getBugs() {
@@ -28,6 +30,9 @@ public class BugService {
 	}
      
 	public void updateBug(@RequestBody Bug bug) {
+		Bug savedBug = bugRepository.save(bug);
+		if(bug!=null)
+			throw new RuntimeException();
 		bugRepository.save(bug);
 	}
 	

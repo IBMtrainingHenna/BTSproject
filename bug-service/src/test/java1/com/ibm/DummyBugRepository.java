@@ -11,6 +11,7 @@ import org.springframework.data.domain.Sort;
 
 import com.ibm.bugBts.Bug;
 import com.ibm.bugBts.BugRepository;
+import com.ibm.bugBts.STATUS;
 
 public class DummyBugRepository implements BugRepository {
 
@@ -63,12 +64,19 @@ public class DummyBugRepository implements BugRepository {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 	@Override
 	public Bug  save(Bug bug) {
 		bug.setId("gfsagfsgf66565");
+		bug.setStatus(STATUS.VERIFIED);
 		return bug;
 	}
+
+//	@Override
+//	public Bug  save(Bug bug) {
+//		bug.setId("gfsagfsgf66565");
+//		return bug;
+//	}
 
 	@Override
 	public Optional<Bug> findById(String id) {

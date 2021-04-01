@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import com.ibm.bugBts.Bug;
 import com.ibm.bugBts.BugRepository;
 import com.ibm.bugBts.BugService;
+import com.ibm.bugBts.STATUS;
 
 class BugServiceTest {
 
@@ -20,20 +21,28 @@ class BugServiceTest {
 		assertNotNull(bugId);
 		
 	}
-
-	@Test
-	void testGetBugs() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetBug() {
-		fail("Not yet implemented");
-	}
-
+	
 	@Test
 	void testUpdateBug() {
-		fail("Not yet implemented");
+		BugService bugservice = new BugService();
+		BugRepository dummyRepo = new DummyBugRepository();
+		BugService 	bugService.setBugrepository(dummyRepo);
+		Bug bug = new Bug();
+		String bug = bugService.updateBug(bug);
+		assertNotNull(status);
+		assertEquals(STATUS.VERIFIED,status);
 	}
 
+	//@Test
+	//void testGetBugs() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	void testGetBug() {
+//		fail("Not yet implemented");
+//	}
+//
+//	
+//
 }

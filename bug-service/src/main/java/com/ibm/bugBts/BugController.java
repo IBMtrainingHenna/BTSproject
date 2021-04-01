@@ -15,30 +15,28 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
-
 @RestController
 public class BugController {
 	@Autowired
 	BugService bugService;
-	
+
 	@PostMapping("/bug")
 	String createBug(@RequestBody @Valid Bug bug, BindingResult bindingResult) {
 		validateModel(bindingResult);
 		return bugService.createBug(bug);
 	}
-	
+
 	private void validateModel(Errors bindingResult) {
 		if (bindingResult.hasErrors()) {
 			throw new IllegalArgumentException("Something went wrong. Plesae retry");
 		}
 	}
-	
+
 	@GetMapping("/bug")
 	List<Bug> getBugs() {
 		return bugService.getBugs();
 	}
-	
+
 	@GetMapping("/project/{id}")
 	Optional<Bug> getBug(@PathVariable("id") String bugId) {
 		return bugService.getBug(bugId);
@@ -48,10 +46,7 @@ public class BugController {
 	void updateProject(@PathVariable("id") String bugId, @RequestBody Bug bug, BindingResult bindingResult) {
 		validateModel(bindingResult);
 		bug.setId(bugId);
-	bugService.updateBug(bug);
+		bugService.updateBug(bug);
 	}
-	
-	
-	
-	
+
 }

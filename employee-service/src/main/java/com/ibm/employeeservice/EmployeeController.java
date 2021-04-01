@@ -1,4 +1,5 @@
-package com.ibm.bugBts;
+package com.ibm.employeeservice;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -16,37 +17,39 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class BugController {
+public class EmployeeController {
 	@Autowired
-	BugService bugService;
-
-	@PostMapping("/bug")
-	String createBug(@RequestBody @Valid Bug bug, BindingResult bindingResult) {
+	EmployeeService employeeService;
+	
+	@PostMapping("/employee")
+	String createEmployee(@RequestBody @Valid Employee employee, BindingResult bindingResult ) {
 		validateModel(bindingResult);
-		return bugService.createBug(bug);
+		return employeeService.createEmployee(employee);
 	}
-
+	
 	private void validateModel(Errors bindingResult) {
 		if (bindingResult.hasErrors()) {
 			throw new IllegalArgumentException("Something went wrong. Plesae retry");
 		}
 	}
-
-	@GetMapping("/bug")
-	List<Bug> getBugs() {
-		return bugService.getBugs();
+	
+	@GetMapping("/employee")
+	List<Employee> getEmployees() {
+		return employeeService.getEmployees();
+	}
+	
+	@GetMapping("/employee/{id}")
+	Optional<Employee> getEmployee(@PathVariable("id") String employeeId) {
+		return employeeService.getEmployee(employeeId);
 	}
 
-	@GetMapping("/bug/{id}")
-	Optional<Bug> getBug(@PathVariable("id") String bugId) {
-		return bugService.getBug(bugId);
-	}
-
-	@PutMapping("/bug/{id}")
-	void updateProject(@PathVariable("id") String bugId, @RequestBody Bug bug, BindingResult bindingResult) {
+	@PutMapping("/employee/{id}")
+	void updateProject(@PathVariable("id") String employeeId, @RequestBody Employee employee, BindingResult bindingResult) {
 		validateModel(bindingResult);
-		bug.setId(bugId);
-		bugService.updateBug(bug);
+		employee.setId(employeeId);
+		employeeService.updateEmployee(employee);
 	}
 
 }
+
+

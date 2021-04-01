@@ -1,5 +1,6 @@
 package com.ibm.employeeservice;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import org.springframework.data.annotation.Id;
@@ -11,8 +12,8 @@ public class Employee {
 	@NotBlank
 	private String name;
 	@NotNull
-	@NotBlank
-	private String mobile;
+	private long mobile;
+	@Email
 	private String email;
 	private TYPE type;
 	public TYPE getType() {
@@ -27,10 +28,10 @@ public class Employee {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getMobile() {
+	public long getMobile() {
 		return mobile;
 	}
-	public void setMobile(String mobile) {
+	public void setMobile(long mobile) {
 		this.mobile = mobile;
 	}
 	public String getEmail() {

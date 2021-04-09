@@ -2,25 +2,26 @@ package com.ibm.bugBts;
 
 import java.util.Date;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
-import org.springframework.data.annotation.Id;
-
+@Entity
 public class Bug {
 
 	@Id
+	@GeneratedValue
 	private String id;
-	@NotNull
-	@NotBlank
+//	@NotNull
+//	@NotBlank
 	private String name;
-	@NotNull
-	@NotBlank
+//	@NotNull
+//	@NotBlank
 	private String projectId;
 	private String module;
-	@NotNull
-	@NotBlank
+//	@NotNull
+//	@NotBlank
 	private String buildVersion;
 	private String synopsis;
 	private String product;
@@ -29,8 +30,8 @@ public class Bug {
 	private STATUS status;
 	private SEVERITY severity;
 	private TYPE type;
-	@NotNull
-	@NotBlank
+//	@NotNull
+//	@NotBlank
 	@Size(min = 5, max = 25)
 	private String description;
 
@@ -129,6 +130,7 @@ public class Bug {
 	public void setSubmittedOn(Date submittedOn) {
 		this.submittedOn = submittedOn;
 	}
+
 	public String getBuildVersion() {
 		return buildVersion;
 	}
@@ -136,6 +138,5 @@ public class Bug {
 	public void setBuildVersion(String buildVersion) {
 		this.buildVersion = buildVersion;
 	}
-
 
 }

@@ -12,7 +12,7 @@ public class Bug {
 
 	@Id
 	@GeneratedValue
-	private String id;
+	private Integer id;
 //	@NotNull
 //	@NotBlank
 	private String name;
@@ -35,11 +35,11 @@ public class Bug {
 	@Size(min = 5, max = 25)
 	private String description;
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

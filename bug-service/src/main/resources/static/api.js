@@ -18,16 +18,17 @@ function saveBug() {
         },
         body: JSON.stringify({
        		name:document.getElementById('name').value,
-            description: document.getElementById('description').value,
-            status: document.getElementById('status').value,
-            priority: document.getElementById('priority').value,
-            type: document.getElementById('type').value,
-            submittedOn: document.getElementById('submittedOn').valueAsDate,
-            buildVersion: document.getElementById('buildVersion').value,
             projectId: document.getElementById('projectId').value,
             module: document.getElementById('module').value,
+            buildVersion: document.getElementById('buildVersion').value,
+            synopsis: document.getElementById('synopsis').value,
             product: document.getElementById('product').value,
-            severity:document.getElementById('severity').value
+            submittedOn: document.getElementById('submittedOn').valueAsDate,
+            priority: document.getElementById('priority').value,
+            status: document.getElementById('status').value,
+            severity:document.getElementById('severity').value,
+            type: document.getElementById('type').value,
+            description: document.getElementById('description').value,
         })
     });
     promise.then(success);

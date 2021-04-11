@@ -2,14 +2,13 @@ package com.ibm.bugBts;
 
 import java.util.Date;
 
+import javax.validation.constraints.Size;
+
 import org.springframework.data.annotation.Id;
 
-//@Entity
 public class Bug {
 
 	@Id
-
-	//@GeneratedValue
 	private String id;
 
 //	@NotNull
@@ -31,14 +30,14 @@ public class Bug {
 	private TYPE type;
 //	@NotNull
 //	@NotBlank
-//	@Size(min = 5, max = 25)
+	@Size(min = 5, max = 25)
 	private String description;
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

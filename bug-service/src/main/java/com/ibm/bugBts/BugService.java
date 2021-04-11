@@ -1,17 +1,18 @@
 package com.ibm.bugBts;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class BugService implements IBugService {
+public class BugService {
 	@Autowired
 	BugRepository bugRepository;
 	
-	@Override
-	public int save(Bug bug) {
-		Bug savedBug = bugRepository.save(bug);
-		return savedBug.getId();
+	public String createBug(@Valid Bug bug) {
+		bugRepository.save(bug);
+		return bug.getId();
 	}
 
 //	public List<Bug> getBugs() {
@@ -26,9 +27,12 @@ public class BugService implements IBugService {
 //		bugRepository.save(bug);
 //	}
 	
+	public BugRepository getBugRepository() {
+		return bugRepository;
+	}
+	
 	public void setBugrepository( BugRepository bugRepository) {
 		this.bugRepository = bugRepository;
 	}
-
 
 }

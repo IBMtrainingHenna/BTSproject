@@ -4,11 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class BugService {
+public class BugService implements IBugService {
 	@Autowired
 	BugRepository bugRepository;
-
-	public String createBug(Bug bug) {
+	
+	@Override
+	public int save(Bug bug) {
 		Bug savedBug = bugRepository.save(bug);
 		return savedBug.getId();
 	}
@@ -28,5 +29,6 @@ public class BugService {
 	public void setBugrepository( BugRepository bugRepository) {
 		this.bugRepository = bugRepository;
 	}
+
 
 }

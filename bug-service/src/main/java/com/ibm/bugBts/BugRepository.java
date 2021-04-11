@@ -1,7 +1,7 @@
 package com.ibm.bugBts;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface BugRepository extends MongoRepository<Bug,String>{
+public interface BugRepository extends JpaRepository<Bug,Integer>{
 
 }

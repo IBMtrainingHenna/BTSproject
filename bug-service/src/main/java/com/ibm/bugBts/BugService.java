@@ -1,11 +1,7 @@
 package com.ibm.bugBts;
 
-import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @Service
 public class BugService implements IBugService {
@@ -29,9 +25,10 @@ public class BugService implements IBugService {
 //	public void updateBug(@RequestBody Bug bug) {
 //		bugRepository.save(bug);
 //	}
-//	
-//	public void setBugrepository( BugRepository bugRepository) {
-//		this.bugRepository = bugRepository;
-//	}
-//
+	
+	public void setBugrepository( BugRepository bugRepository) {
+		this.bugRepository = bugRepository;
+	}
+
+
 }

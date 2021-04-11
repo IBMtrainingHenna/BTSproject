@@ -2,282 +2,298 @@
 <html lang="en">
 
 <head>
-    <title>Bootstrap Example</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <style>
-        body {
-            position: relative;
-        }
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="api.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+body {
+	position: relative;
+}
 
-        .title1 {
-            height: 150px;
-            position: relative;
-            padding-top: 100px;
-        }
+.title1 {
+	height: 150px;
+	position: relative;
+	padding-top: 100px;
+}
 
-        .body1 {
-            width: 100%;
-            float: left;
-            position: relative;
-        }
-    </style>
+.body1 {
+	width: 100%;
+	float: left;
+	position: relative;
+}
+</style>
 </head>
 
-<div class="jumbotron text-center" style="margin-bottom:0">
-    <h1>BUG TRACKING SYSTEM</h1>
-    <!-- <p>Resize this responsive page to see the effect!</p>  -->
+<div class="jumbotron text-center" style="margin-bottom: 0">
+	<h1>BUG TRACKING SYSTEM</h1>
+	<!-- <p>Resize this responsive page to see the effect!</p>  -->
 </div>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
-    <div class="body1">
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <a class="navbar-brand" href="#">Menu</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#section1">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#section2">Bug Operations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#section3">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#section4">Contact Us</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+	<form id='createBug'>
+		<div class="body1">
+			<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+				<a class="navbar-brand" href="#">Menu</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#collapsibleNavbar">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="collapsibleNavbar">
+					<ul class="navbar-nav">
+						<li class="nav-item"><a class="nav-link" href="#section1">Home</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="#section2">Bug
+								Operations</a></li>
+						<li class="nav-item"><a class="nav-link" href="#section3">About
+								Us</a></li>
+						<li class="nav-item"><a class="nav-link" href="#section4">Contact
+								Us</a></li>
+					</ul>
+				</div>
+			</nav>
 
 
-        <div id="section1" class="container-fluid bg-success" style="padding-top:70px;padding-bottom:70px">
-            <h1 class="sectionHead">Our Services</h1>
-            <div class="col-sm-7">
-                <h3>Create Bug</h3>
-                <p>Create bug enables to create a new bug to the database.</p>
-                <h3>Search Bug</h3>
-                <p>Search Bug provides the details of a bug from the database.</p>
-                <h3>Update Bug</h3>
-                <p>Update Bug allows to update the details of an existing bug in the database.</p>
-            </div>
-        </div>
+			<div id="section1" class="container-fluid bg-success"
+				style="padding-top: 70px; padding-bottom: 70px">
+				<h1 class="sectionHead">Our Services</h1>
+				<div class="col-sm-7">
+					<h3>Create Bug</h3>
+					<p>Create bug enables to create a new bug to the database.</p>
+					<h3>Search Bug</h3>
+					<p>Search Bug provides the details of a bug from the database.</p>
+					<h3>Update Bug</h3>
+					<p>Update Bug allows to update the details of an existing bug
+						in the database.</p>
+				</div>
+			</div>
 
-        <div id="section2" class="container-fluid bg-muted" style="padding-top:70px;padding-bottom:70px">
-            <div class="container">
-                <h1>Bug Operations</h1>
-                <br>
-                <!-- Nav tabs -->
-                <ul class="nav nav-tabs" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#createBug">Create Bug</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#searchBug">Search Bug</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#updateBug">Update Bug</a>
-                    </li>
-                </ul>
+			<div id="section2" class="container-fluid bg-muted"
+				style="padding-top: 70px; padding-bottom: 70px">
+				<div class="container">
+					<h1>Bug Operations</h1>
+					<br>
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs" role="tablist">
+						<li class="nav-item"><a class="nav-link active"
+							data-toggle="tab" href="#createBug">Create Bug</a></li>
+						<li class="nav-item"><a class="nav-link" data-toggle="tab"
+							href="#searchBug">Search Bug</a></li>
+						<li class="nav-item"><a class="nav-link" data-toggle="tab"
+							href="#updateBug">Update Bug</a></li>
+					</ul>
 
-                <!-- Tab panes -->
-                <div class="tab-content">
-                    <div id="createBug" class="container tab-pane active"><br>
-                        <h3>Create Bug</h3>
-                        <form action="/action_page.php">
-                            <div class="container">
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div id="createBug" class="container tab-pane active">
+							<br>
+							<h3>Create Bug</h3>
+							<form action="/action_page.php">
+								<div class="container">
 
-                                <!-- -------first row in create bug---------- -->
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="uname" class="mb-2 mr-sm-2">Bug ID : </label>
-                                            <input type="text" class="form-control mb-2 mr-sm-2" id="text"
-                                                placeholder="Enter Bug ID" name="uname" required>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="uname" class="mb-2 mr-sm-2">Project ID:</label>
-                                            <input type="text" class="form-control mb-2 mr-sm-2" id="text"
-                                                placeholder="Enter Project ID" name="uname" required>
-                                        </div>
-                                    </div>
-                                </div>
+									<!-- -------first row in create bug---------- -->
+									<div class="row">
+										<div class="col">
+											<div class="form-group">
+												<label for="uname" class="mb-2 mr-sm-2">Bug ID : </label> <input
+													type="text" class="form-control mb-2 mr-sm-2" id="text"
+													placeholder="Enter Bug ID" name="uname" >
+											</div>
+										</div>
+										<div class="col">
+											<div class="form-group">
+												<label for="uname" class="mb-2 mr-sm-2">Project ID:</label>
+												<input type="text" class="form-control mb-2 mr-sm-2"
+													id="text" placeholder="Enter Project ID" name="uname"
+													required>
+											</div>
+										</div>
+									</div>
 
-                                <!-- --------second row in create bug--------- -->
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="uname" class="mb-2 mr-sm-2">Bug Name : </label>
-                                            <input type="text" class="form-control mb-2 mr-sm-2" id="text"
-                                                placeholder="Enter Name of Bug" name="uname" required>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="uname" class="mb-2 mr-sm-2">Module:</label>
-                                            <input type="text" class="form-control mb-2 mr-sm-2" id="text"
-                                                placeholder="Enter Module" name="uname" required>
-                                        </div>
-                                    </div>
-                                </div>
+									<!-- --------second row in create bug--------- -->
+									<div class="row">
+										<div class="col">
+											<div class="form-group">
+												<label for="uname" class="mb-2 mr-sm-2">Bug Name : </label>
+												<input type="text" class="form-control mb-2 mr-sm-2"
+													id="text" placeholder="Enter Name of Bug" name="uname"
+													required>
+											</div>
+										</div>
+										<div class="col">
+											<div class="form-group">
+												<label for="uname" class="mb-2 mr-sm-2">Module:</label> <input
+													type="text" class="form-control mb-2 mr-sm-2" id="text"
+													placeholder="Enter Module" name="uname" required>
+											</div>
+										</div>
+									</div>
 
-                                <!-- --------third row in create bug---------- -->
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group" action="was-validated">
-                                            <label for="uname" class="mb-2 mr-sm-2">Bug Type : </label>
-                                            <!-- dropdown options -->
-                                            <select name="bugtype" class="custom-select" id="bugtype" required>
-                                                <option value="">Select</option>
-                                                <option value="new">Syntax</option>
-                                                <option value="new">Compile-Time</option>
-                                                <option value="new">Runtime</option>
-                                                <option value="new">Logical</option>
-                                                <option value="new">Functional</option>
-                                                <option value="new">Calculation</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="uname" class="mb-2 mr-sm-2">Bug Status : </label>
-                                            <!-- dropdown options -->
-                                            <select class="custom-select custom-select mb-3" id="bugstatus" required>
-                                                <option value="">Bug Status</option>
-                                                <option value="new">New</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
+									<!-- --------third row in create bug---------- -->
+									<div class="row">
+										<div class="col">
+											<div class="form-group" action="was-validated">
+												<label for="uname" class="mb-2 mr-sm-2">Bug Type : </label>
+												<!-- dropdown options -->
+												<select name="bugtype" class="custom-select" id="bugtype"
+													required>
+													<option value="">Select</option>
+													<option>SYNTAX</option>
+													<option>COMPILE_TIME</option>
+													<option>RUNTIME</option>
+													<option>LOGICAL</option>
+													<option>FUNCTIONAL</option>
+													<option>CALCULATION</option>
+												</select> 
+											</div>
+										</div>
+										<div class="col">
+											<div class="form-group">
+												<label for="uname" class="mb-2 mr-sm-2">Bug Status :
+												</label>
+												<!-- dropdown options -->
+												<select class="custom-select custom-select mb-3"
+													id="bugstatus" required>
+													<option value="">Bug Status</option>
+													<option>NEW</option>
+												</select>
+											</div>
+										</div>
+									</div>
 
-                                <!-- --------fourth row in create bug--------- -->
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="uname" class="mb-2 mr-sm-2">Build Version : </label>
-                                            <input type="text" class="form-control mb-2 mr-sm-2" id="text"
-                                                placeholder="Enter Build Version" name="uname" required>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="uname" class="mb-2 mr-sm-2">Product:</label>
-                                            <input type="text" class="form-control mb-2 mr-sm-2" id="text"
-                                                placeholder="Enter Product Name" name="uname" required>
-                                        </div>
-                                    </div>
-                                </div>
+									<!-- --------fourth row in create bug--------- -->
+									<div class="row">
+										<div class="col">
+											<div class="form-group">
+												<label for="uname" class="mb-2 mr-sm-2">Build
+													Version : </label> <input type="text"
+													class="form-control mb-2 mr-sm-2" id="text"
+													placeholder="Enter Build Version" name="uname" required>
+											</div>
+										</div>
+										<div class="col">
+											<div class="form-group">
+												<label for="uname" class="mb-2 mr-sm-2">Product:</label> <input
+													type="text" class="form-control mb-2 mr-sm-2" id="text"
+													placeholder="Enter Product Name" name="uname" required>
+											</div>
+										</div>
+									</div>
 
-                                <!-- --------fifth row in create bug--------- -->
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="uname" class="mb-2 mr-sm-2">Submitted Date : </label>
-                                            <input type="date" class="form-control mb-2 mr-sm-2" id="text"
-                                                placeholder="Enter Build Version" name="uname" required>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="uname" class="mb-2 mr-sm-2">Severity :</label>
-                                            <!-- dropdown options -->
-                                            <select class="custom-select custom-select mb-3" name="severity" required>
-                                                <option value="">Select</option>
-                                                <option value="new">Low</option>
-                                                <option value="new">Mild</option>
-                                                <option value="new">Severe</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
+									<!-- --------fifth row in create bug--------- -->
+									<div class="row">
+										<div class="col">
+											<div class="form-group">
+												<label for="uname" class="mb-2 mr-sm-2">Submitted
+													Date : </label> <input type="date"
+													class="form-control mb-2 mr-sm-2" id="text"
+													placeholder="Enter Build Version" name="uname" required>
+											</div>
+										</div>
+										<div class="col">
+											<div class="form-group">
+												<label for="uname" class="mb-2 mr-sm-2">Severity :</label>
+												<!-- dropdown options -->
+												<select class="custom-select custom-select mb-3"
+													name="severity" required>
+													<option value="">Select</option>
+													<option>CRITICAL</option>
+													<option>MAJOR</option>
+													<option>MINOR</option>
+												</select>
+											</div>
+										</div>
+									</div>
 
-                                <!-- --------sixth row in create bug--------- -->
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="uname" class="mb-2 mr-sm-2">Priority : </label>
-                                            <!-- dropdown options -->
-                                            <select class="custom-select custom-select mb-3" name="priority" required>
-                                                <option value="">Select</option>
-                                                <option value="new">High</option>
-                                                <option value="new">Medium</option>
-                                                <option value="new">Low</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="uname" class="mb-2 mr-sm-2">Synopsis:</label>
-                                            <input type="text" class="form-control mb-2 mr-sm-2" id="text" name="uname"
-                                                required>
-                                        </div>
-                                    </div>
-                                </div>
+									<!-- --------sixth row in create bug--------- -->
+									<div class="row">
+										<div class="col">
+											<div class="form-group">
+												<label for="uname" class="mb-2 mr-sm-2">Priority : </label>
+												<!-- dropdown options -->
+												<select class="custom-select custom-select mb-3"
+													name="priority" required>
+													<option value="">Select</option>
+													<option>HIGH</option>
+													<option>MEDIUM</option>
+													<option>LOW</option>
+												</select>
+											</div>
+										</div>
+										<div class="col">
+											<div class="form-group">
+												<label for="uname" class="mb-2 mr-sm-2">Synopsis:</label> <input
+													type="text" class="form-control mb-2 mr-sm-2" id="text"
+													name="uname" required>
+											</div>
+										</div>
+									</div>
 
-                                <!-- --------seventh row in create bug--------- -->
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="uname" class="mb-2 mr-sm-2">Description : </label>
-                                            <div class="form-group">
-                                                <textarea class="form-control" rows="5" id="comment" name="text"
-                                                    required></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                    </div>
-                                </div>
+									<!-- --------seventh row in create bug--------- -->
+									<div class="row">
+										<div class="col">
+											<div class="form-group">
+												<label for="uname" class="mb-2 mr-sm-2">Description
+													: </label>
+												<div class="form-group">
+													<textarea class="form-control" rows="5" id="comment"
+														name="text" required></textarea>
+												</div>
+											</div>
+										</div>
+										<div class="col"></div>
+									</div>
 
-                                <!-- ------------buttons------------ -->
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                                <button type="reset" class="btn btn-primary">Reset</button>
-                                <button type="cancel" class="btn btn-primary">Cancel</button>
-
-
-
-                            </div>
-                        </form>
-
-                    </div>
-
-
+									<!-- ------------buttons------------ -->
+									<button type="submit" class="btn btn-primary">Submit</button>
+									<button type="reset" class="btn btn-primary">Reset</button>
+									<button type="cancel" class="btn btn-primary">Cancel</button>
 
 
-                    <div id="searchBug" class="container tab-pane fade"><br>
-                        <h3>Search Bug</h3>
-                        <p>xxxxxxx</p>
-                    </div>
-                    <div id="updateBug" class="container tab-pane fade"><br>
-                        <h3>Update Bug</h3>
-                        <p>xxxxxxxx.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div id="section3" class="container-fluid bg-warning" style="padding-top:70px;padding-bottom:70px">
-            <h1 class="sectionHead">Section 3</h1>
-            <p>Text field</p>
-            <p>Text field</p>
-        </div>
-        <div id="section4" class="container-fluid bg-secondary" style="padding-top:70px;padding-bottom:70px">
-            <h1 class="sectionHead">Section 4</h1>
-            <p>Text field</p>
-            <p>Text field</p>
-        </div>
-    </div>
+								</div>
+							</form>
+	</form>
+	</div>
 
+
+
+
+	<div id="searchBug" class="container tab-pane fade">
+		<br>
+		<h3>Search Bug</h3>
+		<p>xxxxxxx</p>
+	</div>
+	<div id="updateBug" class="container tab-pane fade">
+		<br>
+		<h3>Update Bug</h3>
+		<p>xxxxxxxx.</p>
+	</div>
+	</div>
+	</div>
+	</div>
+
+	<div id="section3" class="container-fluid bg-warning"
+		style="padding-top: 70px; padding-bottom: 70px">
+		<h1 class="sectionHead">Section 3</h1>
+		<p>Text field</p>
+		<p>Text field</p>
+	</div>
+	<div id="section4" class="container-fluid bg-secondary"
+		style="padding-top: 70px; padding-bottom: 70px">
+		<h1 class="sectionHead">Section 4</h1>
+		<p>Text field</p>
+		<p>Text field</p>
+	</div>
+	</div>
 </body>
 
 </html>

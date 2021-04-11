@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<script src="api.js"></script>
+<script src="api.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
@@ -39,7 +39,7 @@ body {
 </div>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
-	<form id='createBug'>
+	<form id="createBug">
 		<div class="body1">
 			<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 				<a class="navbar-brand" href="#">Menu</a>
@@ -105,7 +105,7 @@ body {
 											<div class="form-group">
 												<label for="uname" class="mb-2 mr-sm-2">Bug ID : </label> <input
 													type="text" class="form-control mb-2 mr-sm-2" id="text"
-													placeholder="Enter Bug ID" name="uname" >
+													placeholder="Enter Bug ID" name="uname">
 											</div>
 										</div>
 										<div class="col">
@@ -152,7 +152,7 @@ body {
 													<option>LOGICAL</option>
 													<option>FUNCTIONAL</option>
 													<option>CALCULATION</option>
-												</select> 
+												</select>
 											</div>
 										</div>
 										<div class="col">
@@ -253,7 +253,8 @@ body {
 									</div>
 
 									<!-- ------------buttons------------ -->
-									<button type="submit" class="btn btn-primary">Submit</button>
+									<button type="submit" class="btn btn-primary form-control"
+										onclick="saveBug()">Submit</button>
 									<button type="reset" class="btn btn-primary">Reset</button>
 									<button type="cancel" class="btn btn-primary">Cancel</button>
 
@@ -261,39 +262,39 @@ body {
 
 								</div>
 							</form>
-	</form>
-	</div>
+
+						</div>
 
 
 
 
-	<div id="searchBug" class="container tab-pane fade">
-		<br>
-		<h3>Search Bug</h3>
-		<p>xxxxxxx</p>
-	</div>
-	<div id="updateBug" class="container tab-pane fade">
-		<br>
-		<h3>Update Bug</h3>
-		<p>xxxxxxxx.</p>
-	</div>
-	</div>
-	</div>
-	</div>
+						<div id="searchBug" class="container tab-pane fade">
+							<br>
+							<h3>Search Bug</h3>
+							<p>xxxxxxx</p>
+						</div>
+						<div id="updateBug" class="container tab-pane fade">
+							<br>
+							<h3>Update Bug</h3>
+							<p>xxxxxxxx.</p>
+						</div>
+					</div>
+				</div>
+			</div>
 
-	<div id="section3" class="container-fluid bg-warning"
-		style="padding-top: 70px; padding-bottom: 70px">
-		<h1 class="sectionHead">Section 3</h1>
-		<p>Text field</p>
-		<p>Text field</p>
-	</div>
-	<div id="section4" class="container-fluid bg-secondary"
-		style="padding-top: 70px; padding-bottom: 70px">
-		<h1 class="sectionHead">Section 4</h1>
-		<p>Text field</p>
-		<p>Text field</p>
-	</div>
-	</div>
+			<div id="section3" class="container-fluid bg-warning"
+				style="padding-top: 70px; padding-bottom: 70px">
+				<h1 class="sectionHead">Section 3</h1>
+				<p>Text field</p>
+				<p>Text field</p>
+			</div>
+			<div id="section4" class="container-fluid bg-secondary"
+				style="padding-top: 70px; padding-bottom: 70px">
+				<h1 class="sectionHead">Section 4</h1>
+				<p>Text field</p>
+				<p>Text field</p>
+			</div>
+		</div>
 </body>
 
 </html>

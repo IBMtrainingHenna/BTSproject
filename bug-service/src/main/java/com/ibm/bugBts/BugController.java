@@ -15,10 +15,10 @@ public class BugController {
 	BugService bugService;
 
 	@PostMapping("/bug")
-	String createBug(@RequestBody @Valid Bug bug, BindingResult bindingResult) {
-		validateModel(bindingResult);
-		return bugService.createBug(bug);
+	int createBug(@RequestBody Bug bug) {
+		return bugService.save(bug);
 	}
+
 
 	private void validateModel(Errors bindingResult) {
 		if (bindingResult.hasErrors()) {
@@ -42,5 +42,4 @@ public class BugController {
 //		bug.setId(bugId);
 //		bugService.updateBug(bug);
 //	}
-
 }

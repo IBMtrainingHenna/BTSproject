@@ -2,16 +2,13 @@ package com.ibm.bugBts;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.validation.constraints.Size;
+import org.springframework.data.annotation.Id;
 
-@Entity
+//@Entity
 public class Bug {
 
 	@Id
-	@GeneratedValue
+	//@GeneratedValue
 	private String id;
 //	@NotNull
 //	@NotBlank
@@ -32,7 +29,7 @@ public class Bug {
 	private TYPE type;
 //	@NotNull
 //	@NotBlank
-	@Size(min = 5, max = 25)
+//	@Size(min = 5, max = 25)
 	private String description;
 
 	public String getId() {

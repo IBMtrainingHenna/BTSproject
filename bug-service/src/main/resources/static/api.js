@@ -9,10 +9,6 @@ function saveBug() {
     }
     const createBug = document.getElementById('createBug');
 
-//    if (!createBug.checkValidity()) {
-//        alert('form is invalid');
-//        return;
-//    }
     const promise = fetch('/bug', {
         method: 'POST',
         headers: {

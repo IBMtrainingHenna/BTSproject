@@ -195,7 +195,7 @@ body {
 										<label for="uname" class="mb-2 mr-sm-2">Priority : </label>
 										<!-- dropdown options -->
 										<select class="custom-select custom-select mb-3"
-											name="priority" required>
+											name="priority" id="priority" required>
 											<option value="">Select</option>
 											<option>HIGH</option>
 											<option>MEDIUM</option>
@@ -208,7 +208,7 @@ body {
 										<label for="uname" class="mb-2 mr-sm-2">Severity :</label>
 										<!-- dropdown options -->
 										<select class="custom-select custom-select mb-3"
-											name="severity" required>
+											name="severity" id="severity" required>
 											<option value="">Select</option>
 											<option>CRITICAL</option>
 											<option>MAJOR</option>
@@ -238,10 +238,7 @@ body {
 									</div>
 								</div>
 							</div>
-
-
 						</div>
-
 					</form>
 							<!-- ------------buttons------------ -->
 							<button type="submit" class="btn btn-primary" onclick="saveBug()">Submit</button>

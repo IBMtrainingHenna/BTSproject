@@ -15,14 +15,14 @@ public class BugController {
 	BugService bugService;
 
 	@PostMapping("/bug")
-	int createBug(@RequestBody Bug bug) {
-		return bugService.save(bug);
+	String createBug(@RequestBody @Valid Bug bug, BindingResult bindingResult) {
+		validateModel(bindingResult);
+		return bugService.createBug(bug);
 	}
-
 
 	private void validateModel(Errors bindingResult) {
 		if (bindingResult.hasErrors()) {
-			throw new IllegalArgumentException("Something went wrong. Plesae retry");
+			throw new IllegalArgumentException("Something went wrong");
 		}
 	}
 

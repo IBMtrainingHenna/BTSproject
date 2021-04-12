@@ -9,9 +9,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ibm</groupId>
-	<artifactId>bugservice</artifactId>
+	<artifactId>bug-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>bugservice</name>
+	<name>bug-service</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>

@@ -27,6 +27,7 @@ public class BugService {
 //		bugRepository.save(bug);
 //	}
 	
+	
 	public BugRepository getBugRepository() {
 		return bugRepository;
 	}

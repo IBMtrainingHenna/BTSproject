@@ -91,8 +91,9 @@ body {
 
 			<!-- Tab panes -->
 			<div class="tab-content">
-				<div id="createBug" class="container tab-pane active" style="padding-bottom: 30px">
-					<form id="createBug()" action="/action_page.php">
+				<div id="createBug" class="container tab-pane active"
+					style="padding-bottom: 30px">
+					<form id="createBug()">
 						<br>
 						<h3>Create Bug</h3>
 
@@ -104,7 +105,7 @@ body {
 									<div class="form-group">
 										<div class="form-group">
 											<label for="uname" class="mb-2 mr-sm-2">Bug Name : </label> <input
-												type="text" class="form-control mb-2 mr-sm-2" id="text"
+												type="text" class="form-control mb-2 mr-sm-2" id="name"
 												placeholder="Enter Name of Bug" name="uname" required>
 										</div>
 									</div>
@@ -112,7 +113,7 @@ body {
 								<div class="col">
 									<div class="form-group">
 										<label for="uname" class="mb-2 mr-sm-2">Project ID:</label> <input
-											type="text" class="form-control mb-2 mr-sm-2" id="text"
+											type="text" class="form-control mb-2 mr-sm-2" id="projectId"
 											placeholder="Enter Project ID" name="uname" required>
 									</div>
 								</div>
@@ -124,7 +125,7 @@ body {
 									<div class="form-group" action="was-validated">
 										<label for="uname" class="mb-2 mr-sm-2">Bug Type : </label>
 										<!-- dropdown options -->
-										<select name="bugtype" class="custom-select" id="bugtype"
+										<select name="bugtype" class="custom-select" id="type"
 											required>
 											<option value="">Select</option>
 											<option>SYNTAX</option>
@@ -139,7 +140,7 @@ body {
 								<div class="col">
 									<div class="form-group">
 										<label for="uname" class="mb-2 mr-sm-2">Module:</label> <input
-											type="text" class="form-control mb-2 mr-sm-2" id="text"
+											type="text" class="form-control mb-2 mr-sm-2" id="module"
 											placeholder="Enter Module" name="uname" required>
 									</div>
 								</div>
@@ -151,16 +152,16 @@ body {
 									<div class="form-group">
 										<label for="uname" class="mb-2 mr-sm-2">Build Version
 											: </label> <input type="text" class="form-control mb-2 mr-sm-2"
-											id="text" placeholder="Enter Build Version" name="uname"
-											required>
+											id="buildVersion" placeholder="Enter Build Version"
+											name="uname" required>
 									</div>
 								</div>
 								<div class="col">
 									<div class="form-group">
 										<label for="uname" class="mb-2 mr-sm-2">Bug Status : </label>
 										<!-- dropdown options -->
-										<select class="custom-select custom-select mb-3"
-											id="bugstatus" required>
+										<select class="custom-select custom-select mb-3" id="status"
+											required>
 											<option value="">Bug Status</option>
 											<option>NEW</option>
 										</select>
@@ -174,14 +175,14 @@ body {
 									<div class="form-group">
 										<label for="uname" class="mb-2 mr-sm-2">Submitted Date
 											: </label> <input type="date" class="form-control mb-2 mr-sm-2"
-											id="text" placeholder="Enter Build Version" name="uname"
-											required>
+											id="submittedOn" placeholder="Enter Build Version"
+											name="uname" required>
 									</div>
 								</div>
 								<div class="col">
 									<div class="form-group">
 										<label for="uname" class="mb-2 mr-sm-2">Product:</label> <input
-											type="text" class="form-control mb-2 mr-sm-2" id="text"
+											type="text" class="form-control mb-2 mr-sm-2" id="product"
 											placeholder="Enter Product Name" name="uname" required>
 									</div>
 								</div>
@@ -224,7 +225,7 @@ body {
 										<label for="uname" class="mb-2 mr-sm-2">Description :
 										</label>
 										<div class="form-group">
-											<textarea class="form-control" rows="5" id="comment"
+											<textarea class="form-control" rows="5" id="description"
 												name="text" required></textarea>
 										</div>
 									</div>
@@ -232,66 +233,69 @@ body {
 								<div class="col">
 									<div class="form-group">
 										<label for="uname" class="mb-2 mr-sm-2">Synopsis:</label> <input
-											type="text" class="form-control mb-2 mr-sm-2" id="text"
+											type="text" class="form-control mb-2 mr-sm-2" id="synopsis"
 											name="uname" required>
 									</div>
 								</div>
 							</div>
 
-							<!-- ------------buttons------------ -->
-							<button type="submit" class="btn btn-primary" onclick="saveBug()">Submit</button>
-							<button type="reset" class="btn btn-primary">Reset</button>
 
 						</div>
 
 					</form>
+							<!-- ------------buttons------------ -->
+							<button type="submit" class="btn btn-primary" onclick="saveBug()">Submit</button>
+							<button type="reset" class="btn btn-primary">Reset</button>
 				</div>
 
 
 				<div id="searchBug" class="container tab-pane fade"
 					style="padding-bottom: 30px">
-					<br>
-					<h3>Search Bug</h3>
-					<div class="form-group">
-						<label for="uname" class="mb-2 mr-sm-2">Bug ID:</label> <input
-							type="text" class="form-control mb-2 mr-sm-2" id="text"
-							name="uname" placeholder="Enter Bug ID" required>
-					</div>
+					<form id="getBug()">
+						<br>
+						<h3>Search Bug</h3>
+						<div class="form-group">
+							<label for="uname" class="mb-2 mr-sm-2">Bug ID:</label> <input
+								type="text" class="form-control mb-2 mr-sm-2" id="id"
+								name="uname" placeholder="Enter Bug ID" required>
+						</div>
 
-					<button type="submit" class="btn btn-primary form-control"
-						onclick="getBug()">Search</button>
-
+						<button type="submit" class="btn btn-primary form-control"
+							onclick="getBug()">Search</button>
+					</form>
 
 				</div>
 				<div id="updateBug" class="container tab-pane fade"
 					style="padding-bottom: 30px">
-					<br>
-					<h3>Update Bug</h3>
-					<div class="form-group">
-						<label for="uname" class="mb-2 mr-sm-2">Bug ID:</label> <input
-							type="text" class="form-control mb-2 mr-sm-2" id="text"
-							name="uname" placeholder="Enter Bug ID" required>
-					</div>
-					<div class="form-group">
-						<label for="uname" class="mb-2 mr-sm-2">Bug Status : </label>
-						<!-- dropdown options -->
-						<select class="custom-select custom-select mb-3" id="bugstatus"
-							required>
-							<option value="">Bug Status</option>
-							<option>ASSIGNED</option>
-							<option>OPEN</option>
-							<option>FIXED</option>
-							<option>PENDING_RETEST</option>
-							<option>RETEST</option>
-							<option>REOPEN</option>
-							<option>VERIFIED</option>
-							<option>CLOSED</option>
-						</select>
+					<form id="updateBug()">
+						<br>
+						<h3>Update Bug</h3>
+						<div class="form-group">
+							<label for="uname" class="mb-2 mr-sm-2">Bug ID:</label> <input
+								type="text" class="form-control mb-2 mr-sm-2" id="id"
+								name="uname" placeholder="Enter Bug ID" required>
+						</div>
+						<div class="form-group">
+							<label for="uname" class="mb-2 mr-sm-2">Bug Status : </label>
+							<!-- dropdown options -->
+							<select class="custom-select custom-select mb-3" id="bugstatus"
+								required>
+								<option value="">Bug Status</option>
+								<option>ASSIGNED</option>
+								<option>OPEN</option>
+								<option>FIXED</option>
+								<option>PENDING_RETEST</option>
+								<option>RETEST</option>
+								<option>REOPEN</option>
+								<option>VERIFIED</option>
+								<option>CLOSED</option>
+							</select>
 
-						<button type="submit" class="btn btn-primary form-control"
-							onclick="updateBug()">Update</button>
+							<button type="submit" class="btn btn-primary form-control"
+								onclick="updateBug()">Update</button>
 
-					</div>
+						</div>
+					</form>
 				</div>
 
 

@@ -30,7 +30,7 @@ public class BugController {
 			throw new IllegalArgumentException("Something went wrong");
 		}
 	}
-
+//
 //	@GetMapping("/bug")
 //	List<Bug> getBugs() {
 //		return bugService.getBugs();

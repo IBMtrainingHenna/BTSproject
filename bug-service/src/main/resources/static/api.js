@@ -85,15 +85,15 @@ function updateBug() {
 	}
 
 	const updateBug = document.getElementById('updateBug');
-	if (!updateBug.checkValidity()) {
-		alert('form is invalid');
-		return;
-	}
+//	if (!updateBug.checkValidity()) {
+//		alert('form is invalid');
+//		return;
+//	}
 
 	let id = document.getElementById('bugId').value;
 
 
-	const promise = fetch('/bug/' + id, {
+	const promise = fetch(('/bug/' + id), {
 		method: 'PUT',
 		headers: {
 			'Content-Type': 'application/json'

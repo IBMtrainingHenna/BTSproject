@@ -18,10 +18,10 @@ public class BugService {
 		return bug.getId();
 	}
 
-//	public List<Bug> getBugs() {
-//		return bugRepository.findAll();
-//	}
-////
+	public List<Bug> getBugs() {
+		return bugRepository.findAll();
+	}
+//
 	public Optional<Bug> getBug(String bugId) {
 		return bugRepository.findById(bugId);
 	}

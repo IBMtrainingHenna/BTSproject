@@ -257,20 +257,48 @@ body {
 								name="uname" placeholder="Enter Bug ID" required>
 						</div>
 
-					</form>
-					<button type="submit" class="btn btn-primary form-control"
-						onclick="getBug()">Search</button>
 
+						<button type="submit" class="btn btn-primary form-control"
+							onclick="getBug()">Search</button>
+							
+							
+						
+
+						<div class="table-responsive">
+							<table class=" table table-bordered "
+								style="border: 2px solid #000000; margin-top: 50px">
+								<thead>
+
+								
+									<td scope="col" style="border: 2px solid #000000;">Project
+										ID</td>
+									<td scope="col" style="border: 2px solid #000000;">Status</td>
+									<td scope="col" style="border: 2px solid #000000;">
+										Priority</td>
+									<td scope="col" style="border: 2px solid #000000;">Type</td>
+									<td scope="col" style="border: 2px solid #000000;">Submitted
+										On</td>
+									
+
+								</thead>
+								<tbody id="bugTable" style="border: 2px solid #000000">
+
+
+								</tbody>
+
+							</table>
+						</div>
+					</form>
 
 				</div>
 				<div id="updateBug" class="container tab-pane fade"
 					style="padding-bottom: 30px">
-					<form id="updateBug()">
+					<form id="updateBug">
 						<br>
 						<h3>Update Bug</h3>
 						<div class="form-group">
 							<label for="uname" class="mb-2 mr-sm-2">Bug ID:</label> <input
-								type="text" class="form-control mb-2 mr-sm-2" id="id"
+								type="text" class="form-control mb-2 mr-sm-2" id="bugId"
 								name="uname" placeholder="Enter Bug ID" required>
 						</div>
 						<div class="form-group">

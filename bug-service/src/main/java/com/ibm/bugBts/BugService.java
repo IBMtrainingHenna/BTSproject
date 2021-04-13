@@ -39,4 +39,14 @@ public class BugService {
 		this.bugRepository = bugRepository;
 	}
 
+	public void setBugRepository(BugRepository dummyRepo) {
+		this.bugRepository = bugRepository;
+		
+	}
+
+	public STATUS updateBugStatus(Bug bug) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

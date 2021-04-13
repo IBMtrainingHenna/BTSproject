@@ -73,36 +73,26 @@ function getBug() {
 
 
 //-------------update Bug-------
-function updateBug() {
-    function success(response) {
-        return response.json();
-    }
-    function errorHandler(error) {
-        console.log(error);
-    }
- 
-    const updateBug = document.getElementById('updateBug');
-    if (!updateBug.checkValidity()) {
-        alert('form is invalid');
-        return;
-    }
+			function updateBug() {
+				
+				 const updateBug = document.getElementById('updateBug');
+			//	    if (!updateBug.checkValidity()) {
+			//	        alert('form is invalid');
+			//	        return;
+			//	    }
+				let id = document.getElementById('bugId').value;
+				fetch('/bug/' + id, {
+					method : 'PUT',
+					headers : {
+						'Content-Type' : 'application/json'
+					},
+					body : JSON
+							.stringify({
 
-    let id = document.getElementById('bugId').value;
+								status : document.getElementById('status').value,
 
+							})
+				});
 
-    const promise = fetch('/bug/'+id, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            status: document.getElementById('status').value
-        })
-    });
-
-    promise.then(success);
-    promise.then(function (data) {
-        console.log(data);
-    })
-    promise.catch(errorHandler);
-}
+				alert("Bug has been updated!");
+			}

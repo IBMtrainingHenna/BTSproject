@@ -240,9 +240,9 @@ body {
 							</div>
 						</div>
 					</form>
-							<!-- ------------buttons------------ -->
-							<button type="submit" class="btn btn-primary" onclick="saveBug()">Submit</button>
-							<button type="reset" class="btn btn-primary">Reset</button>
+					<!-- ------------buttons------------ -->
+					<button type="submit" class="btn btn-primary" onclick="saveBug()">Submit</button>
+					<button type="reset" class="btn btn-primary">Reset</button>
 				</div>
 
 
@@ -253,13 +253,14 @@ body {
 						<h3>Search Bug</h3>
 						<div class="form-group">
 							<label for="uname" class="mb-2 mr-sm-2">Bug ID:</label> <input
-								type="text" class="form-control mb-2 mr-sm-2" id="id"
+								type="text" class="form-control mb-2 mr-sm-2" id="bugId"
 								name="uname" placeholder="Enter Bug ID" required>
 						</div>
 
-						<button type="submit" class="btn btn-primary form-control"
-							onclick="getBug()">Search</button>
 					</form>
+					<button type="submit" class="btn btn-primary form-control"
+						onclick="getBug()">Search</button>
+
 
 				</div>
 				<div id="updateBug" class="container tab-pane fade"

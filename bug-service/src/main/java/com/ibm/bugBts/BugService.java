@@ -1,5 +1,8 @@
 package com.ibm.bugBts;
 
+import java.util.List;
+import java.util.Optional;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +21,10 @@ public class BugService {
 //	public List<Bug> getBugs() {
 //		return bugRepository.findAll();
 //	}
-//
-//	public Optional<Bug> getBug(String bugId) {
-//		return bugRepository.findById(bugId);
-//	}
+////
+	public Optional<Bug> getBug(String bugId) {
+		return bugRepository.findById(bugId);
+	}
 //
 //	public void updateBug(@RequestBody Bug bug) {
 //		bugRepository.save(bug);

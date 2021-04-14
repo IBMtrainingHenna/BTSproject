@@ -30,7 +30,7 @@ public class Bug {
 	private TYPE type;
 //	@NotNull
 //	@NotBlank
-	@Size(min = 5, max = 25)
+//	@Size(min = 5, max = 1000)
 	private String description;
 
 	public String getId() {

@@ -72,7 +72,41 @@ function getBug() {
 }
 
 
+//---------GET bugs-------------
 
+function getBugs() {
+	const promise = fetch('/bug/');
+	promise.then(function(response) {
+		return response.json();
+	})
+		.then(function(bug) {
+			console.log(bug);
+			const table = document.getElementById('bugTable');
+			for (let index = 0; index < bug.length; index++) {
+				const currentBug=bug[index];
+				const row = document.createElement('tr');
+				const projectIdColumn = document.createElement('td');
+				const statusColumn = document.createElement('td');
+				const priorityColumn = document.createElement('td');
+				const typeColumn = document.createElement('td');
+				const submittedOnColumn = document.createElement('td');
+
+				projectIdColumn.append(bug.projectId);
+				statusColumn.append(bug.status);
+				priorityColumn.append(bug.priority);
+				typeColumn.append(bug.type);
+				submittedOnColumn.append(bug.submittedOn);
+
+				row.appendChild(projectIdColumn);
+				row.appendChild(statusColumn);
+				row.appendChild(priorityColumn);
+				row.appendChild(typeColumn);
+				row.appendChild(submittedOnColumn);
+
+				table.appendChild(row);
+			}
+		})
+}
 
 
 //-------------update Bug-------
@@ -85,15 +119,15 @@ function updateBug() {
 	}
 
 	const updateBug = document.getElementById('updateBug');
-	if (!updateBug.checkValidity()) {
-		alert('form is invalid');
-		return;
-	}
+	//	if (!updateBug.checkValidity()) {
+	//		alert('form is invalid');
+	//		return;
+	//	}
 
 	let id = document.getElementById('bugId').value;
 
 
-	const promise = fetch('/bug/' + id, {
+	const promise = fetch(('/bug/' + id), {
 		method: 'PUT',
 		headers: {
 			'Content-Type': 'application/json'

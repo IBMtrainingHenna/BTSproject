@@ -48,13 +48,11 @@ body {
 			</button>
 			<div class="collapse navbar-collapse" id="collapsibleNavbar">
 				<ul class="navbar-nav">
-					<li class="nav-item"><a class="nav-link" href="#section1">Home</a>
-					</li>
 					<li class="nav-item"><a class="nav-link" href="#section2">Bug
 							Operations</a></li>
-					<li class="nav-item"><a class="nav-link" href="#section3">About
+					<li class="nav-item"><a class="nav-link" href="aboutus.html">About
 							Us</a></li>
-					<li class="nav-item"><a class="nav-link" href="#section4">Contact
+					<li class="nav-item"><a class="nav-link" href="contactus.html">Contact
 							Us</a></li>
 				</ul>
 			</div>
@@ -73,7 +71,6 @@ body {
 					the database.</p>
 			</div>
 		</div>
-
 		<div id="section2" class="container-fluid bg-muted"
 			style="padding-top: 70px; padding-bottom: 70px">
 
@@ -82,18 +79,18 @@ body {
 			<!-- Nav tabs -->
 			<ul class="nav nav-tabs" role="tablist">
 				<li class="nav-item"><a class="nav-link active"
-					data-toggle="tab" href="#createBug">Create Bug</a></li>
+					data-toggle="tab" href="#createNewBug">Create Bug</a></li>
 				<li class="nav-item"><a class="nav-link" data-toggle="tab"
 					href="#searchBug">Search Bug</a></li>
 				<li class="nav-item"><a class="nav-link" data-toggle="tab"
-					href="#updateBug">Update Bug</a></li>
+					href="#updateBugDetails">Update Bug</a></li>
 			</ul>
 
 			<!-- Tab panes -->
 			<div class="tab-content">
-				<div id="createBug" class="container tab-pane active"
+				<div id="createNewBug" class="container tab-pane active"
 					style="padding-bottom: 30px">
-					<form id="createBug()">
+					<form id="createBug">
 						<br>
 						<h3>Create Bug</h3>
 
@@ -226,7 +223,8 @@ body {
 										</label>
 										<div class="form-group">
 											<textarea class="form-control" rows="5" id="description"
-												name="text" required></textarea>
+												name="text" placeholder="describe in 5 to 100 characters"
+												required></textarea>
 										</div>
 									</div>
 								</div>
@@ -239,16 +237,16 @@ body {
 								</div>
 							</div>
 						</div>
+						<!-- ------------buttons------------ -->
+						<button type="submit" class="btn btn-primary" onclick="saveBug()">Submit</button>
+						<button type="reset" class="btn btn-primary">Reset</button>
 					</form>
-					<!-- ------------buttons------------ -->
-					<button type="submit" class="btn btn-primary" onclick="saveBug()">Submit</button>
-					<button type="reset" class="btn btn-primary">Reset</button>
 				</div>
 
 
 				<div id="searchBug" class="container tab-pane fade"
 					style="padding-bottom: 30px">
-					<form id="getBug()">
+					<form id="getBug">
 						<br>
 						<h3>Search Bug</h3>
 						<div class="form-group">
@@ -260,51 +258,40 @@ body {
 
 						<button type="submit" class="btn btn-primary form-control"
 							onclick="getBug()">Search</button>
-							
-							
-						
+
+<!-- <button type="submit" class="btn btn-primary form-control" onclick="getBugs()">Get all bug details</button> -->					
 
 						<div class="table-responsive">
 							<table class=" table table-bordered "
 								style="border: 2px solid #000000; margin-top: 50px">
-								<thead>
-
-								
-									<td scope="col" style="border: 2px solid #000000;">Project
-										ID</td>
-									<td scope="col" style="border: 2px solid #000000;">Status</td>
-									<td scope="col" style="border: 2px solid #000000;">
-										Priority</td>
-									<td scope="col" style="border: 2px solid #000000;">Type</td>
-									<td scope="col" style="border: 2px solid #000000;">Submitted
-										On</td>
-									
-
+								<thead class="thead-dark">
+									<th>Project ID</th>
+									<th>Status</th>
+									<th>Priority</th>
+									<th>Type</th>
+									<th>Submitted On</th>
 								</thead>
 								<tbody id="bugTable" style="border: 2px solid #000000">
-
-
 								</tbody>
-
 							</table>
 						</div>
 					</form>
-
 				</div>
-				<div id="updateBug" class="container tab-pane fade"
+
+
+				<div id="updateBugDetails" class="container tab-pane fade"
 					style="padding-bottom: 30px">
 					<form id="updateBug">
 						<br>
 						<h3>Update Bug</h3>
 						<div class="form-group">
-							<label for="uname" class="mb-2 mr-sm-2">Bug ID:</label> <input
-								type="text" class="form-control mb-2 mr-sm-2" id="bugId"
-								name="uname" placeholder="Enter Bug ID" required>
-						</div>
-						<div class="form-group">
-							<label for="uname" class="mb-2 mr-sm-2">Bug Status : </label>
+							<label for="uname" class="mb-2 mr-sm-2">Bug ID:</label> 
+							<input type="text" class="form-control mb-2 mr-sm-2" id="bugId"
+								name="uname" placeholder="Enter Bug ID" required> 
+								<label for="uname" class="mb-2 mr-sm-2">Bug Status : 
+								</label>
 							<!-- dropdown options -->
-							<select class="custom-select custom-select mb-3" id="bugstatus"
+							<select class="custom-select custom-select mb-3" id="status"
 								required>
 								<option value="">Bug Status</option>
 								<option>ASSIGNED</option>
@@ -317,30 +304,13 @@ body {
 								<option>CLOSED</option>
 							</select>
 
-							<button type="submit" class="btn btn-primary form-control"
-								onclick="updateBug()">Update</button>
-
 						</div>
+						<button type="submit" class="btn btn-primary"
+							onclick="updateBug()">Update</button>
 					</form>
+
 				</div>
-
-
-
 			</div>
-
-			<div id="section3" class="container-fluid bg-muted"
-				style="padding-top: 70px; padding-bottom: 70px">
-				<h1 class="sectionHead">Section 3</h1>
-				<p>Text field</p>
-				<p>Text field</p>
-			</div>
-			<div id="section4" class="container-fluid bg-secondary"
-				style="padding-top: 70px; padding-bottom: 70px">
-				<h1 class="sectionHead">Section 4</h1>
-				<p>Text field</p>
-				<p>Text field</p>
-			</div>
-
 		</div>
 </body>
 

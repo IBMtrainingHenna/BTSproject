@@ -52,8 +52,8 @@ body {
 							Operations</a></li>
 					<li class="nav-item"><a class="nav-link" href="aboutus.html">About
 							Us</a></li>
-					<li class="nav-item"><a class="nav-link"
-						href="contactus.html">Contact Us</a></li>
+					<li class="nav-item"><a class="nav-link" href="contactus.html">Contact
+							Us</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -259,15 +259,17 @@ body {
 						<button type="submit" class="btn btn-primary form-control"
 							onclick="getBug()">Search</button>
 
+<!-- <button type="submit" class="btn btn-primary form-control" onclick="getBugs()">Get all bug details</button> -->					
+
 						<div class="table-responsive">
 							<table class=" table table-bordered "
 								style="border: 2px solid #000000; margin-top: 50px">
-								<thead>
-									<td scope="col">Project ID</td>
-									<td scope="col">Status</td>
-									<td scope="col">Priority</td>
-									<td scope="col">Type</td>
-									<td scope="col">Submitted On</td>
+								<thead class="thead-dark">
+									<th>Project ID</th>
+									<th>Status</th>
+									<th>Priority</th>
+									<th>Type</th>
+									<th>Submitted On</th>
 								</thead>
 								<tbody id="bugTable" style="border: 2px solid #000000">
 								</tbody>
@@ -283,10 +285,11 @@ body {
 						<br>
 						<h3>Update Bug</h3>
 						<div class="form-group">
-							<label for="uname" class="mb-2 mr-sm-2">Bug ID:</label> <input
-								type="text" class="form-control mb-2 mr-sm-2" id="bugId"
-								name="uname" placeholder="Enter Bug ID" required> <label
-								for="uname" class="mb-2 mr-sm-2">Bug Status : </label>
+							<label for="uname" class="mb-2 mr-sm-2">Bug ID:</label> 
+							<input type="text" class="form-control mb-2 mr-sm-2" id="bugId"
+								name="uname" placeholder="Enter Bug ID" required> 
+								<label for="uname" class="mb-2 mr-sm-2">Bug Status : 
+								</label>
 							<!-- dropdown options -->
 							<select class="custom-select custom-select mb-3" id="status"
 								required>

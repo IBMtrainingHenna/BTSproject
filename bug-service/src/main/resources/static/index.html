@@ -96,6 +96,16 @@ body {
 
 						<div class="container">
 
+							<div class="form-group form-inline">
+
+								<label for="uname" class="mb-2 mr-sm-2">Bug Status : </label> <input
+									type="text" class="form-control mb-2 mr-sm-2" id="status"
+									value="NEW" name="uname" required>
+
+							</div>
+							
+							<i>Please enter the following details:</i>
+
 							<!-- -------first row in create bug---------- -->
 							<div class="row">
 								<div class="col">
@@ -156,9 +166,9 @@ body {
 								<div class="col">
 									<div class="form-group">
 
-										<label for="uname" class="mb-2 mr-sm-2">Bug Status : </label>
-										<input type="text" class="form-control mb-2 mr-sm-2"
-											id="status" value="NEW" name="uname" required>
+										<label for="uname" class="mb-2 mr-sm-2">Product:</label> <input
+											type="text" class="form-control mb-2 mr-sm-2" id="product"
+											placeholder="Enter Product Name" name="uname" required>
 
 									</div>
 								</div>
@@ -170,8 +180,7 @@ body {
 									<div class="form-group">
 										<label for="uname" class="mb-2 mr-sm-2">Submitted Date
 											: </label> <input type="date" class="form-control mb-2 mr-sm-2"
-											id="submittedOn" placeholder="Enter Build Version"
-											name="uname" required>
+											id="submittedOn" name="uname" required>
 									</div>
 								</div>
 								<div class="col">
@@ -182,18 +191,6 @@ body {
 									</div>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col">
-									<div class="form-group">
-										<label for="uname" class="mb-2 mr-sm-2">Product:</label> <input
-											type="text" class="form-control mb-2 mr-sm-2" id="product"
-											placeholder="Enter Product Name" name="uname" required>
-
-
-									</div>
-								</div>
-							</div>
-
 
 							<!-- --------fifth row in create bug--------- -->
 							<div class="row">
@@ -270,7 +267,7 @@ body {
 								name="uname" placeholder="Enter Bug ID" required>
 						</div>
 
-
+						
 						<button type="submit" class="btn btn-primary form-control"
 							onclick="getBug()" style="padding-bottom: 30px">Search</button>
 
@@ -281,11 +278,11 @@ body {
 						<table class=" table table-bordered table-stripped"
 							style="border: 2px solid #000000; margin-top: 50px">
 							<thead class="thead-dark">
-								<th>Project ID</th>
+								<th>Bug Name</th>
 								<th>Status</th>
 								<th>Priority</th>
-								<th>Type</th>
 								<th>Submitted On</th>
+								<th>ETA</th>
 							</thead>
 							<tbody id="bugTable" style="border: 2px solid #000000">
 							</tbody>

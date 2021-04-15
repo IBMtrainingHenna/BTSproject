@@ -1,13 +1,18 @@
 //-------------create Bug-----------
-console.log('js started')
 function saveBug() {
 	function success(response) {
+		alert("Created Bug!");
 		return response.json();
 	}
 	function errorHandler(error) {
+		alert("Creat Bug Failed!");
 		console.log(error);
 	}
 	const createBug = document.getElementById('createBug');
+	if (!createBug.checkValidity()) {
+		alert('Please fill all the fields');
+		return;
+	}
 
 	const promise = fetch('/bug', {
 		method: 'POST',
@@ -34,7 +39,6 @@ function saveBug() {
 		console.log(data);
 	})
 	promise.catch(errorHandler);
-
 }
 
 //---------GET bug-------------
@@ -75,15 +79,22 @@ function getBug() {
 //---------GET bugs-------------
 
 function getBugs() {
-	const promise = fetch('/bug/');
+	const promise = fetch('/bug');
 	promise.then(function(response) {
 		return response.json();
 	})
 		.then(function(bug) {
 			console.log(bug);
 			const table = document.getElementById('bugTable');
+			
+			const rows=table.children.length;
+			for(let count=0; count<rows; count++){
+				table.children[0].remove();
+			}
+			
 			for (let index = 0; index < bug.length; index++) {
-				const currentBug=bug[index];
+				console.log(bug[index]);
+				const currentBug = bug[index];
 				const row = document.createElement('tr');
 				const projectIdColumn = document.createElement('td');
 				const statusColumn = document.createElement('td');
@@ -91,11 +102,11 @@ function getBugs() {
 				const typeColumn = document.createElement('td');
 				const submittedOnColumn = document.createElement('td');
 
-				projectIdColumn.append(bug.projectId);
-				statusColumn.append(bug.status);
-				priorityColumn.append(bug.priority);
-				typeColumn.append(bug.type);
-				submittedOnColumn.append(bug.submittedOn);
+				projectIdColumn.append(currentBug.projectId);
+				statusColumn.append(currentBug.status);
+				priorityColumn.append(currentBug.priority);
+				typeColumn.append(currentBug.type);
+				submittedOnColumn.append(currentBug.submittedOn);
 
 				row.appendChild(projectIdColumn);
 				row.appendChild(statusColumn);
@@ -112,6 +123,7 @@ function getBugs() {
 //-------------update Bug-------
 function updateBug() {
 	function success(response) {
+		console.log(response.json());
 		return response.json();
 	}
 	function errorHandler(error) {
@@ -124,16 +136,15 @@ function updateBug() {
 	//		return;
 	//	}
 
-	let id = document.getElementById('bugId').value;
+	let id1 = document.getElementById('id').value;
 
-
-	const promise = fetch(('/bug/' + id), {
+	const promise = fetch(('/bug/' + id1), {
 		method: 'PUT',
 		headers: {
 			'Content-Type': 'application/json'
 		},
 		body: JSON.stringify({
-			status: document.getElementById('status').value
+			status: document.getElementById('bugStatus').value
 		})
 	});
 

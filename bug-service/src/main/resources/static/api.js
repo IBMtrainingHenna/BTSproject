@@ -1,11 +1,15 @@
 //-------------create Bug-----------
 function saveBug() {
+	
 	function success(response) {
-		alert("Created Bug!");
-		return response.json();
+	
+		if(!response.ok){
+			alert("Something went wrong");
+			return;
+		};
 	}
 	function errorHandler(error) {
-		alert("Creat Bug Failed!");
+	
 		console.log(error);
 	}
 	const createBug = document.getElementById('createBug');
@@ -27,6 +31,7 @@ function saveBug() {
 			synopsis: document.getElementById('synopsis').value,
 			product: document.getElementById('product').value,
 			submittedOn: document.getElementById('submittedOn').valueAsDate,
+			eta : document.getElementById('eta').valueAsDate,
 			status: document.getElementById('status').value,
 			type: document.getElementById('type').value,
 			severity: document.getElementById('severity').value,

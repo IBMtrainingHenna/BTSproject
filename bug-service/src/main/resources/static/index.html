@@ -176,12 +176,24 @@ body {
 								</div>
 								<div class="col">
 									<div class="form-group">
-										<label for="uname" class="mb-2 mr-sm-2">Product:</label> <input
-											type="text" class="form-control mb-2 mr-sm-2" id="product"
-											placeholder="Enter Product Name" name="uname" required>
+										<label for="uname" class="mb-2 mr-sm-2">ETA : </label> <input
+											type="date" class="form-control mb-2 mr-sm-2" id="eta"
+											placeholder="" name="uname" required>
 									</div>
 								</div>
 							</div>
+							<div class="row">
+								<div class="col">
+									<div class="form-group">
+										<label for="uname" class="mb-2 mr-sm-2">Product:</label> <input
+											type="text" class="form-control mb-2 mr-sm-2" id="product"
+											placeholder="Enter Product Name" name="uname" required>
+
+
+									</div>
+								</div>
+							</div>
+
 
 							<!-- --------fifth row in create bug--------- -->
 							<div class="row">
@@ -213,6 +225,8 @@ body {
 								</div>
 							</div>
 
+
+
 							<!-- --------sixth row in create bug--------- -->
 							<div class="row">
 								<div class="col">
@@ -235,10 +249,10 @@ body {
 								</div>
 							</div>
 						</div>
+
 						<!-- ------------buttons------------ -->
 						<button type="submit" class="btn btn-primary" onclick="saveBug()">Submit</button>
 						<button type="reset" class="btn btn-primary">Reset</button>
-
 					</form>
 				</div>
 
@@ -248,8 +262,8 @@ body {
 					<form id="getBug">
 						<br>
 						<h3>Search Bug</h3>
-					<button type="getData" class="btn btn-primary form-control"
-						onclick="getBugs()">Get all Bugs Details</button>
+						<button type="getData" class="btn btn-primary form-control"
+							onclick="getBugs()">Get all Bugs Details</button>
 						<div class="form-group">
 							<label for="uname" class="mb-2 mr-sm-2">Bug ID:</label> <input
 								type="text" class="form-control mb-2 mr-sm-2" id="bugId"

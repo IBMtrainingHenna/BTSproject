@@ -32,6 +32,23 @@ public class Bug {
 //	@NotBlank
 //	@Size(min = 5, max = 1000)
 	private String description;
+	private Date eta;
+
+	
+	
+
+	public Date getEta() {
+		return eta;
+	}
+
+	public void setEta(Date eta) {
+		
+		if(eta.compareTo(new Date())<0) {
+			throw new IllegalArgumentException("ETA date should be a future date");
+		}
+		this.eta = eta;
+	}
+	
 
 	public String getId() {
 		return id;

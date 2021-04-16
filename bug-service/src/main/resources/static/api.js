@@ -1,15 +1,14 @@
 //-------------create Bug-----------
 function saveBug() {
-	
 	function success(response) {
-	
-		if(!response.ok){
+
+		if(!response.ok) {
 			alert("Something went wrong");
 			return;
 		};
 	}
 	function errorHandler(error) {
-	
+
 		console.log(error);
 	}
 	const createBug = document.getElementById('createBug');
@@ -57,24 +56,30 @@ function getBug() {
 		.then(function(bug) {
 			console.log(bug);
 			const table = document.getElementById('bugTable');
+			
+			const rows = table.children.length;
+			for (let count = 0; count < rows; count++) {
+				table.children[0].remove();
+			}
+			
 			const row = document.createElement('tr');
-			const projectIdColumn = document.createElement('td');
+			const nameColumn = document.createElement('td');
 			const statusColumn = document.createElement('td');
 			const priorityColumn = document.createElement('td');
-			const typeColumn = document.createElement('td');
 			const submittedOnColumn = document.createElement('td');
+			const etaColumn = document.createElement('td');
 
-			projectIdColumn.append(bug.projectId);
+			nameColumn.append(bug.name);
 			statusColumn.append(bug.status);
 			priorityColumn.append(bug.priority);
-			typeColumn.append(bug.type);
 			submittedOnColumn.append(bug.submittedOn);
+			etaColumn.append(bug.eta);
 
-			row.appendChild(projectIdColumn);
+			row.appendChild(nameColumn);
 			row.appendChild(statusColumn);
 			row.appendChild(priorityColumn);
-			row.appendChild(typeColumn);
 			row.appendChild(submittedOnColumn);
+			row.appendChild(etaColumn);
 
 			table.appendChild(row);
 		})
@@ -91,33 +96,35 @@ function getBugs() {
 		.then(function(bug) {
 			console.log(bug);
 			const table = document.getElementById('bugTable');
-			
-			const rows=table.children.length;
-			for(let count=0; count<rows; count++){
+
+			const rows = table.children.length;
+			for (let count = 0; count < rows; count++) {
 				table.children[0].remove();
 			}
-			
+
 			for (let index = 0; index < bug.length; index++) {
 				console.log(bug[index]);
 				const currentBug = bug[index];
+				console.log(bug);
+				const table = document.getElementById('bugTable');
 				const row = document.createElement('tr');
-				const projectIdColumn = document.createElement('td');
+				const nameColumn = document.createElement('td');
 				const statusColumn = document.createElement('td');
 				const priorityColumn = document.createElement('td');
-				const typeColumn = document.createElement('td');
 				const submittedOnColumn = document.createElement('td');
+				const etaColumn = document.createElement('td');
 
-				projectIdColumn.append(currentBug.projectId);
+				nameColumn.append(currentBug.name);
 				statusColumn.append(currentBug.status);
 				priorityColumn.append(currentBug.priority);
-				typeColumn.append(currentBug.type);
 				submittedOnColumn.append(currentBug.submittedOn);
+				etaColumn.append(currentBug.eta);
 
-				row.appendChild(projectIdColumn);
+				row.appendChild(nameColumn);
 				row.appendChild(statusColumn);
 				row.appendChild(priorityColumn);
-				row.appendChild(typeColumn);
 				row.appendChild(submittedOnColumn);
+				row.appendChild(etaColumn);
 
 				table.appendChild(row);
 			}
@@ -127,13 +134,13 @@ function getBugs() {
 
 //-------------update Bug-------
 function updateBug() {
-	function success(response) {
-		console.log(response.json());
-		return response.json();
-	}
-	function errorHandler(error) {
-		console.log(error);
-	}
+	//	function success(response) {
+	//		console.log(response.json());
+	//		return response.json();
+	//	}
+	//	function errorHandler(error) {
+	//		console.log(error);
+	//	}
 
 	const updateBug = document.getElementById('updateBug');
 	//	if (!updateBug.checkValidity()) {
@@ -143,7 +150,7 @@ function updateBug() {
 
 	let id1 = document.getElementById('id').value;
 
-	const promise = fetch(('/bug/' + id1), {
+	fetch(('/bug/' + id1), {
 		method: 'PUT',
 		headers: {
 			'Content-Type': 'application/json'
@@ -153,9 +160,9 @@ function updateBug() {
 		})
 	});
 
-	promise.then(success);
-	promise.then(function(data) {
-		console.log(data);
-	})
-	promise.catch(errorHandler);
+	//	promise.then(success);
+	//	promise.then(function(data) {
+	//		console.log(data);
+	//	})
+	//	promise.catch(errorHandler);
 }

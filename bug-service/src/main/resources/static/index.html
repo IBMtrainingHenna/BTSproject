@@ -98,7 +98,7 @@ body {
 
 							<div class="form-group form-inline">
 
-								<label for="uname" class="mb-2 mr-sm-2">Bug Status : </label> <input
+								<label for="uname" class="mb-2 mr-sm-2"><b>Bug Status :</b> </label><br> <input
 									type="text" class="form-control mb-2 mr-sm-2" id="status"
 									value="NEW" name="uname" required>
 
@@ -110,16 +110,16 @@ body {
 							<div class="row">
 								<div class="col">
 									<div class="form-group">
-										<div class="form-group">
-											<label for="uname" class="mb-2 mr-sm-2">Bug Name : </label> <input
+										<div class="form-group form-inline">
+											<label for="uname" class="mb-2 mr-sm-2"><b>Bug Name : </b></label> <br><input
 												type="text" class="form-control mb-2 mr-sm-2" id="name"
 												placeholder="Enter Name of Bug" name="uname" required>
 										</div>
 									</div>
 								</div>
 								<div class="col">
-									<div class="form-group">
-										<label for="uname" class="mb-2 mr-sm-2">Project ID:</label> <input
+									<div class="form-group form-inline">
+										<label for="uname" class="mb-2 mr-sm-2"><b>Project ID:</b></label> <input
 											type="text" class="form-control mb-2 mr-sm-2" id="projectId"
 											placeholder="Enter Project ID" name="uname" required>
 									</div>
@@ -129,8 +129,8 @@ body {
 							<!-- --------second row in create bug--------- -->
 							<div class="row">
 								<div class="col">
-									<div class="form-group" action="was-validated">
-										<label for="uname" class="mb-2 mr-sm-2">Bug Type : </label>
+									<div class="form-group form-inline" action="was-validated">
+										<label for="uname" class="mb-2 mr-sm-2"><b>Bug Type : </b></label>
 										<!-- dropdown options -->
 										<select name="bugtype" class="custom-select" id="type"
 											required>
@@ -145,8 +145,8 @@ body {
 									</div>
 								</div>
 								<div class="col">
-									<div class="form-group">
-										<label for="uname" class="mb-2 mr-sm-2">Module:</label> <input
+									<div class="form-group form-inline">
+										<label for="uname" class="mb-2 mr-sm-2"><b>Module:</b></label> <input
 											type="text" class="form-control mb-2 mr-sm-2" id="module"
 											placeholder="Enter Module" name="uname" required>
 									</div>
@@ -156,17 +156,17 @@ body {
 							<!-- --------third row in create bug---------- -->
 							<div class="row">
 								<div class="col">
-									<div class="form-group">
-										<label for="uname" class="mb-2 mr-sm-2">Build Version
-											: </label> <input type="text" class="form-control mb-2 mr-sm-2"
+									<div class="form-group form-inline">
+										<label for="uname" class="mb-2 mr-sm-2"><b>Build Version
+											:</b> </label> <input type="text" class="form-control mb-2 mr-sm-2"
 											id="buildVersion" placeholder="Enter Build Version"
 											name="uname" required>
 									</div>
 								</div>
 								<div class="col">
-									<div class="form-group">
+									<div class="form-group form-inline">
 
-										<label for="uname" class="mb-2 mr-sm-2">Product:</label> <input
+										<label for="uname" class="mb-2 mr-sm-2"><b>Product:</b></label> <input
 											type="text" class="form-control mb-2 mr-sm-2" id="product"
 											placeholder="Enter Product Name" name="uname" required>
 
@@ -177,15 +177,15 @@ body {
 							<!-- --------fourth row in create bug--------- -->
 							<div class="row">
 								<div class="col">
-									<div class="form-group">
-										<label for="uname" class="mb-2 mr-sm-2">Submitted Date
-											: </label> <input type="date" class="form-control mb-2 mr-sm-2"
-											id="submittedOn" name="uname" required>
+									<div class="form-group form-inline">
+									<!--  	<label for="uname" class="mb-2 mr-sm-2"><b>Submitted Date
+											: </b></label> <input type="date" class="form-control mb-2 mr-sm-2"
+											id="submittedOn" name="uname" required>-->
 									</div>
 								</div>
 								<div class="col">
-									<div class="form-group">
-										<label for="uname" class="mb-2 mr-sm-2">ETA : </label> <input
+									<div class="form-group form-inline">
+										<label for="uname" class="mb-2 mr-sm-2"><b>ETA : </b></label> <input
 											type="date" class="form-control mb-2 mr-sm-2" id="eta"
 											placeholder="" name="uname" required>
 									</div>
@@ -195,8 +195,8 @@ body {
 							<!-- --------fifth row in create bug--------- -->
 							<div class="row">
 								<div class="col">
-									<div class="form-group">
-										<label for="uname" class="mb-2 mr-sm-2">Priority : </label>
+									<div class="form-group form-inline">
+										<label for="uname" class="mb-2 mr-sm-2"><b>Priority : </b></label>
 										<!-- dropdown options -->
 										<select class="custom-select custom-select mb-3"
 											name="priority" id="priority" required>
@@ -208,8 +208,8 @@ body {
 									</div>
 								</div>
 								<div class="col">
-									<div class="form-group">
-										<label for="uname" class="mb-2 mr-sm-2">Severity :</label>
+									<div class="form-group form-inline">
+										<label for="uname" class="mb-2 mr-sm-2"><b>Severity :</b></label>
 										<!-- dropdown options -->
 										<select class="custom-select custom-select mb-3"
 											name="severity" id="severity" required>
@@ -227,8 +227,8 @@ body {
 							<!-- --------sixth row in create bug--------- -->
 							<div class="row">
 								<div class="col">
-									<div class="form-group">
-										<label for="uname" class="mb-2 mr-sm-2">Description :
+									<div class="form-group form-inline">
+										<label for="uname" class="mb-2 mr-sm-2"><b>Description :</b>
 										</label>
 										<div class="form-group">
 											<textarea class="form-control" rows="5" id="description"
@@ -238,8 +238,8 @@ body {
 									</div>
 								</div>
 								<div class="col">
-									<div class="form-group">
-										<label for="uname" class="mb-2 mr-sm-2">Synopsis:</label> <input
+									<div class="form-group form-inline">
+										<label for="uname" class="mb-2 mr-sm-2"><b>Synopsis:</b></label> <input
 											type="text" class="form-control mb-2 mr-sm-2" id="synopsis"
 											name="uname" required>
 									</div>
@@ -264,14 +264,14 @@ body {
 						<div class="form-group">
 							<label for="uname" class="mb-2 mr-sm-2">Bug ID:</label> <input
 								type="text" class="form-control mb-2 mr-sm-2" id="bugId"
-								name="uname" placeholder="Enter Bug ID" required>
+								name="uname" placeholder="Enter Bug ID">
 						</div>
 
+					</form>
 						
 						<button type="submit" class="btn btn-primary form-control"
 							onclick="getBug()" style="padding-bottom: 30px">Search</button>
 
-					</form>
 
 
 					<div class="table-responsive">

@@ -48,8 +48,8 @@ function saveBug() {
 //---------GET bug-------------
 
 function getBug() {
-	let id = document.getElementById('bugId').value;
-	const promise = fetch('/bug/' + id);
+	let name = document.getElementById('bugName').value;
+	const promise = fetch('/bug/' + name);
 	promise.then(function(response) {
 		return response.json();
 	})
@@ -63,19 +63,19 @@ function getBug() {
 			}
 			
 			const row = document.createElement('tr');
-			const nameColumn = document.createElement('td');
+			const idColumn = document.createElement('td');
 			const statusColumn = document.createElement('td');
 			const priorityColumn = document.createElement('td');
 			const submittedOnColumn = document.createElement('td');
 			const etaColumn = document.createElement('td');
 
-			nameColumn.append(bug.name);
+			idColumn.append(bug.id);
 			statusColumn.append(bug.status);
 			priorityColumn.append(bug.priority);
 			submittedOnColumn.append(bug.submittedOn);
 			etaColumn.append(bug.eta);
 
-			row.appendChild(nameColumn);
+			row.appendChild(idColumn);
 			row.appendChild(statusColumn);
 			row.appendChild(priorityColumn);
 			row.appendChild(submittedOnColumn);

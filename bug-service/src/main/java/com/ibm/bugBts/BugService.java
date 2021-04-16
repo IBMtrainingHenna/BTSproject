@@ -23,8 +23,8 @@ public class BugService {
 		return bugRepository.findAll();
 	}
 
-	public Optional<Bug> getBug(String bugId) {
-		return bugRepository.findById(bugId);
+	public Optional<Bug> getBug(String bugName) {
+		return bugRepository.findByName(bugName);
 	}
 
 	public void updateBug(@RequestBody Bug bug) {

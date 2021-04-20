@@ -23,10 +23,6 @@ public class BugService {
 		return bugRepository.findAll();
 	}
 
-	public Optional<Bug> getBug(String bugName) {
-		return bugRepository.findByName(bugName);
-	}
-
 	public void updateBug(@RequestBody Bug bug) {
 		bugRepository.save(bug);
 	}
@@ -38,6 +34,14 @@ public class BugService {
 	
 	public void setBugrepository( BugRepository bugRepository) {
 		this.bugRepository = bugRepository;
+	}
+
+	public Optional<Bug> getBugbyName(String bugName) {
+		return bugRepository.findByName(bugName);
+	}
+
+	public List<Bug> getBugbyStatus(String bugStatus) {
+		return bugRepository.findByStatus(bugStatus);
 	}
 
 }

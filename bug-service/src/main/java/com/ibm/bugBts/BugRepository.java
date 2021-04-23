@@ -12,4 +12,8 @@ public interface BugRepository extends MongoRepository<Bug,String>{
 
 	List<Bug> findByStatus(String bugStatus);
 
+	List<Bug> getByStatusAndName(STATUS bugStatus, String bugName);
+
+	List<Bug> findByNameIgnoreCase(String bugName);
+
 }

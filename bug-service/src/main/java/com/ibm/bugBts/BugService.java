@@ -40,4 +40,24 @@ public class BugService {
 		this.bugRepository = bugRepository;
 	}
 
+	public List<Bug> getBugByStatus(String bugStatus) {
+	
+		return bugRepository.findByStatus(bugStatus);
+	
+	}
+	public void deleteBug(String bugId)
+	{
+		bugRepository.deleteById(bugId);
+	}
+
+	public List<Bug> getByStatusAndName(STATUS bugStatus, String bugName) {
+		
+		return bugRepository.getByStatusAndName(bugStatus,bugName);
+	}
+
+	public List<Bug> getBugByPartialName(String bugName) {
+		// TODO Auto-generated method stub
+		return bugRepository.findByNameIgnoreCase(bugName);
+	}
+
 }

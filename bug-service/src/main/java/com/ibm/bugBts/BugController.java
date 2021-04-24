@@ -4,10 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
+import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,15 +39,36 @@ public class BugController {
 		return bugService.getBugs();
 	}
 
-	@GetMapping("/bug/{id}")
-	Optional<Bug> getBug(@PathVariable("id") String bugId) {
-		return bugService.getBug(bugId);
+	@GetMapping("/bug/name/{name}")
+	Optional<Bug> getBug(@PathVariable("name") String bugName) {
+		return bugService.getBug(bugName);
 	}
-
+	
+	@GetMapping("/bug/status/{status}")
+	List<Bug> getBugByStatus(@PathVariable("status") String bugStatus) {
+		return bugService.getBugByStatus(bugStatus);
+	}
+	@GetMapping("bug/search/{name}/{status}")
+	List<Bug> getByStatusAndName(@PathVariable("status") STATUS bugStatus, @PathVariable("name") String bugName)
+	{
+		return bugService.getByStatusAndName(bugStatus,bugName);
+	}
+	@GetMapping("/bug/{name}")
+	List<Bug> getBugByPartialName(@PathVariable("name") String bugName){
+		return bugService.getBugByPartialName(bugName);
+	}
+	
+			
+	
 	@PutMapping("/bug/{id}")
 	void updateProject(@PathVariable("id") String bugId, @RequestBody Bug bug, BindingResult bindingResult) {
 		validateModel(bindingResult);
 		bug.setId(bugId);
 		bugService.updateBug(bug);
+	}
+	
+	@DeleteMapping("/bug/{id}")
+	void deleteBug(@PathVariable("id")String bugId) {
+		bugService.deleteBug(bugId);
 	}
 }

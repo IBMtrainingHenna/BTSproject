@@ -2,7 +2,8 @@ package com.ibm.bugBts;
 
 import java.util.Date;
 
-import javax.validation.constraints.Size;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
 
@@ -11,27 +12,34 @@ public class Bug {
 	@Id
 	private String id;
 
-//	@NotNull
-//	@NotBlank
+	@NotNull
+	@NotBlank
 	private String name;
-//	@NotNull
-//	@NotBlank
+	@NotNull
+	@NotBlank
 	private String projectId;
+	@NotNull
+	@NotBlank
 	private String module;
-//	@NotNull
-//	@NotBlank
+	@NotNull
+	@NotBlank
 	private String buildVersion;
+	@NotNull
+	@NotBlank
 	private String synopsis;
+	@NotNull
+	@NotBlank
 	private String product;
 	private Date submittedOn;
 	private PRIORITY priority;
 	private STATUS status;
 	private SEVERITY severity;
 	private TYPE type;
-//	@NotNull
-//	@NotBlank
+	@NotNull
+	@NotBlank
 //	@Size(min = 5, max = 1000)
 	private String description;
+	@NotNull
 	private Date eta;
 
 	

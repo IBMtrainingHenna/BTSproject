@@ -23,9 +23,160 @@ public class BugService {
 		return bugRepository.findAll();
 	}
 
-	public void updateBug(@RequestBody Bug bug) {
+//	public void updateBug(@RequestBody Bug bug) {
+//		bugRepository.save(bug);
+//	}
+	
+	public STATUS updateBug(@RequestBody Bug bug) {
+		STATUS status = bug.getStatus();
+		Optional<Bug> currentBug = bugRepository.findById(bug.getId());
+		currentBug.ifPresent(currentbug -> {
+		STATUS currentstatus = currentbug.getStatus();
+
+		if (currentstatus == STATUS.NEW) {
+		if (status == STATUS.ASSIGNED || status == STATUS.NEW) {
 		bugRepository.save(bug);
-	}
+		} else {
+		throw new IllegalArgumentException("Status change not allowed");
+		}
+		}
+
+		else if (currentstatus == STATUS.ASSIGNED) {
+		if (status == STATUS.OPEN || status == STATUS.ASSIGNED) {
+		bugRepository.save(bug);
+		} else {
+		throw new IllegalArgumentException("Status change not allowed");
+		}
+		}
+
+		else if (currentstatus == STATUS.OPEN) {
+		if (status == STATUS.OPEN || status == STATUS.FIXED || status == STATUS.DEFERRED
+		|| status == STATUS.DUPLICATE || status == STATUS.REJECTED || status == STATUS.NOT_A_BUG
+		|| status == STATUS.COULD_NOT_REPRODUCE || status == STATUS.NEED_MORE_INFO
+		|| status == STATUS.WONT_FIX) {
+		bugRepository.save(bug);
+		} else {
+		throw new IllegalArgumentException("Status change not allowed");
+		}
+		}
+
+		else if (currentstatus == STATUS.FIXED) {
+		if (status == STATUS.FIXED || status == STATUS.PENDING_RETEST) {
+		bugRepository.save(bug);
+		} else {
+		throw new IllegalArgumentException("Status change not allowed");
+		}
+		}
+
+		else if (currentstatus == STATUS.PENDING_RETEST) {
+		if (status == STATUS.PENDING_RETEST || status == STATUS.RETEST) {
+		bugRepository.save(bug);
+		} else {
+		throw new IllegalArgumentException("Status change not allowed");
+		}
+		}
+
+		else if (currentstatus == STATUS.RETEST) {
+		if (status == STATUS.RETEST || status == STATUS.REOPEN || status == STATUS.VERIFIED) {
+		bugRepository.save(bug);
+		} else {
+		throw new IllegalArgumentException("Status change not allowed");
+		}
+		}
+
+		else if (currentstatus == STATUS.REOPEN) {
+		if (status == STATUS.REOPEN || status == STATUS.FIXED || status == STATUS.DEFERRED
+		|| status == STATUS.DUPLICATE || status == STATUS.REJECTED || status == STATUS.NOT_A_BUG
+		|| status == STATUS.COULD_NOT_REPRODUCE || status == STATUS.NEED_MORE_INFO
+		|| status == STATUS.WONT_FIX) {
+		bugRepository.save(bug);
+		} else {
+		throw new IllegalArgumentException("Status change not allowed");
+		}
+		}
+
+		else if (currentstatus == STATUS.DUPLICATE) {
+		if (status == STATUS.DUPLICATE || status == STATUS.CLOSED) {
+		bugRepository.save(bug);
+		} else {
+		throw new IllegalArgumentException("Status change not allowed");
+		}
+		}
+
+		else if (currentstatus == STATUS.REJECTED) {
+		if (status == STATUS.REJECTED || status == STATUS.CLOSED) {
+		bugRepository.save(bug);
+		} else {
+		throw new IllegalArgumentException("Status change not allowed");
+		}
+		}
+
+		else if (currentstatus == STATUS.NOT_A_BUG) {
+		if (status == STATUS.NOT_A_BUG || status == STATUS.CLOSED) {
+		bugRepository.save(bug);
+		} else {
+		throw new IllegalArgumentException("Status change not allowed");
+		}
+		}
+
+		else if (currentstatus == STATUS.WONT_FIX) {
+		if (status == STATUS.WONT_FIX || status == STATUS.CLOSED) {
+		bugRepository.save(bug);
+		} else {
+		throw new IllegalArgumentException("Status change not allowed");
+		}
+		}
+
+		else if (currentstatus == STATUS.VERIFIED) {
+		if (status == STATUS.VERIFIED || status == STATUS.CLOSED) {
+		bugRepository.save(bug);
+		} else {
+		throw new IllegalArgumentException("Status change not allowed");
+		}
+		}
+
+		else if (currentstatus == STATUS.COULD_NOT_REPRODUCE) {
+		if (status == STATUS.COULD_NOT_REPRODUCE || status == STATUS.DEFERRED) {
+		bugRepository.save(bug);
+		} else {
+		throw new IllegalArgumentException("Status change not allowed");
+		}
+		}
+
+		else if (currentstatus == STATUS.NEED_MORE_INFO) {
+		if (status == STATUS.NEED_MORE_INFO || status == STATUS.DEFERRED) {
+		bugRepository.save(bug);
+		} else {
+		throw new IllegalArgumentException("Status change not allowed");
+		}
+		}
+
+		else if (currentstatus == STATUS.DEFERRED) {
+		if (status == STATUS.DEFERRED || status == STATUS.ASSIGNED) {
+		bugRepository.save(bug);
+		} else {
+		throw new IllegalArgumentException("Status change not allowed");
+		}
+		}
+
+		else if (currentstatus == STATUS.CLOSED) {
+		if (status == STATUS.CLOSED) {
+		bugRepository.save(bug);
+		} else {
+		throw new IllegalArgumentException("Status change not allowed");
+		}
+		}
+
+		else {
+		bugRepository.save(bug);
+		}
+
+		});
+
+		return bug.getStatus();
+		}
+
+
 	
 	
 	public BugRepository getBugRepository() {
